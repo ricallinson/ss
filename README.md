@@ -1,5 +1,7 @@
 # ss
 
+[![Build Status](https://travis-ci.org/ricallinson/ss.svg)](http://travis-ci.org/ricallinson/ss)
+
 Command line tool for performing __simple searches__ over files and directories.
 
 ## Usage
