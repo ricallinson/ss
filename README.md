@@ -1,6 +1,6 @@
 # ss
 
-Command line tool for performing _simple searches_ over files and directories.
+Command line tool for performing __simple searches__ over files and directories.
 
 ## Usage
 
