@@ -4,6 +4,12 @@
 
 Command line tool for performing __simple searches__ over files and directories.
 
+## Install
+
+You must have [go](http://golang.org/) installed to build __ss__.
+
+  go get github.com/ricallinson/ss
+
 ## Usage
 
     ss
