@@ -85,9 +85,9 @@ func main() {
 
 	if len(flag.Arg(1)) == 0 {
 		fmt.Println("Usage: [options] filename|directory \"query\"")
-		fmt.Println("  rsa -c ./path \"a b\"")
-		fmt.Println("  rsa -c ./path \"a b NOT y z\"")
-		fmt.Println("  rsa -c ./path \"a OR b\"")
+		fmt.Println("  ss -c ./path \"a b\"")
+		fmt.Println("  ss -c ./path \"a b NOT y z\"")
+		fmt.Println("  ss -c ./path \"a OR b\"")
 		return
 	}
 

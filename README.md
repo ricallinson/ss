@@ -13,10 +13,10 @@ You must have [go](http://golang.org/) installed to build __ss__.
 ## Usage
 
     ss
-    Usage: [options] path 'query'
-      rsa -c ./path 'a b'
-      rsa -c ./path 'a b NOT y z'
-      rsa -c ./path 'a OR b'
+    Usage: [options] filename|directory "query"
+      ss -c ./path "a b"
+      ss -c ./path "a b NOT y z"
+      ss -c ./path "a OR b"
 
     ss -h
     Usage of ss:
@@ -58,23 +58,23 @@ Exact positive and negative OR matching __'a' OR 'b' NOT 'c' OR 'd' OR 'e'__.
 
     'a OR b NOT c OR d OR e'
 
-Complete example of positive and negative using OR matching __'a' AND 'b' AND 'c' OR 'd' NOT 'e' AND NOT 'f' AND NOT 'g' OR NOT 'h' OR NOT 'j'__.
+Complete example of positive and negative using OR matching __'a' AND 'b' AND 'c' OR 'd' NOT 'e' AND NOT 'f' AND NOT 'g' OR NOT 'h' OR NOT 'i'__.
 
-    'a b c OR e NOT f g OR h OR j'
+    'a b c OR d NOT e f g OR h OR i'
 
 ## Why?
 
 You can use `cat`, `grep` and `wc` to achieve the same result without needing to install yet another program.
 
     cat ./fixtures/**/* | grep PUT | wc -l
-    5
+           5
 
 But if like me regex is not your first language then simple queries like the following become a time sink.
 
     ss -c ./fixtures 'home NOT 302'
     5
 
-Performance can also become issue when using `cat` and `grep` over several gigabytes worth of files.
+Performance can also become issue when using `cat`, `grep`, `wc` over several gigabytes worth of files.
 
 ## Ideas
 
@@ -91,12 +91,12 @@ Install the coverage tool `go get code.google.com/p/go.tools/cmd/cover`.
 
     go test
 
-## Code Coverage
+## Generate Code Coverage
 
 Get a quick coverage number.
 
     go test -cover
 
-Viewing the lines covered.
+View the lines covered by the tests.
 
     go test -coverprofile=coverage.out; go tool cover -html=coverage.out
