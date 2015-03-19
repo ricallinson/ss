@@ -46,9 +46,9 @@ Exact positive OR matching __'a' OR 'b'__.
 
     'a OR b'
 
-Exact positive OR group matching __'a' OR 'b' OR 'c'__.
+Exact positive OR group matching __'a' OR 'b' AND 'c' OR 'd' OR 'e'__.
 
-    'a OR b OR c'
+    'a OR b c OR d OR e'
 
 Exact negative OR matching __NOT 'a' OR NOT 'b'__.
 
