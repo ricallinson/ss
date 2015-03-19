@@ -3,7 +3,6 @@ package main
 import (
 	"os"
 	"strings"
-	"fmt"
 )
 
 // Currently support; "a b c OR d NOT w x y OR z"
@@ -51,7 +50,7 @@ func Query(q string, o *os.File, c int) func(string) int {
 		}
 	}
 
-	fmt.Println("ANDs", ands, "AND ORs", andOrs, "NOTs", nots, "NOT ORs", notOrs)
+	// fmt.Println("ANDs", ands, "AND ORs", andOrs, "NOTs", nots, "NOT ORs", notOrs)
 
 	andsTotal := len(ands) + len(andOrs)
 	notsTotal := len(nots) + len(notOrs)
