@@ -32,7 +32,7 @@ Exact negative matching __NOT 'a' AND NOT 'b'__.
 
     'NOT a b'
 
-Exact positive and negative matching __'a' AND 'b' NOT 'c' AND 'd'__.
+Exact positive and negative matching __'a' AND 'b' NOT 'c' AND NOT 'd'__.
 
     'a b NOT c d'
 
