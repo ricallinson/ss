@@ -38,6 +38,20 @@ Performance can also become issue when using `cat` and `grep` over several gigab
 
 # Ideas
 
+## Imporoved query support
+
+Currently the query construction is very basic. For example the query;
+
+    a OR b c OR d
+
+Will be interpreted as;
+
+    a OR b OR c OR d
+
+Rather than;
+
+    a OR b AND c OR d
+
 ## Count items over some time period
 
 How do you specify the field to represent time?
