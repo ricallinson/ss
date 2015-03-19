@@ -26,9 +26,16 @@ func Query(q string, o *os.File, c int) func(string) int {
 			if i+1 < len(matches) && matches[i+1] == "OR" {
 				isOr = true
 			}
+			if isOr && i-1 > 0 && matches[i-1] != "OR" {
+				if isAnd {
+					andOrsIndex = len(andOrs)
+				} else {
+					notOrsIndex = len(notOrs)
+				}
+			}
 			if isAnd {
 				if isOr {
-					if len(andOrs) < andOrsIndex+1 {
+					if len(andOrs) == andOrsIndex {
 						andOrs = append(andOrs, []string{})
 					}
 					andOrs[andOrsIndex] = append(andOrs[andOrsIndex], v)
@@ -38,7 +45,7 @@ func Query(q string, o *os.File, c int) func(string) int {
 				}
 			} else {
 				if isOr {
-					if len(notOrs) < notOrsIndex+1 {
+					if len(notOrs) == notOrsIndex {
 						notOrs = append(notOrs, []string{})
 					}
 					notOrs[notOrsIndex] = append(notOrs[notOrsIndex], v)

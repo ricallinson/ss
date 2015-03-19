@@ -85,12 +85,12 @@ func TestRsa(t *testing.T) {
 			t := ProcessFiles(f, q)
 			AssertEqual(t, 0)
 		})
-		// It("should count all occurrences of 'GET' OR 'PUT' and 'status' OR 'update'", func() {
-		// 	q := Query("GET OR PUT status OR update", nil, 0)
-		// 	f := GetFiles("./fixtures/basic")
-		// 	t := ProcessFiles(f, q)
-		// 	AssertEqual(t, 10)
-		// })
+		It("should count all occurrences of 'GET' OR 'PUT' and 'status' OR 'update'", func() {
+			q := Query("GET OR PUT status OR update", nil, 0)
+			f := GetFiles("./fixtures/basic")
+			t := ProcessFiles(f, q)
+			AssertEqual(t, 10)
+		})
 	})
 
 	Describe("ProcessFiles() Bug Fixes", func() {
