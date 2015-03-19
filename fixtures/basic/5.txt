@@ -1,0 +1,5 @@
+200 GET /status.html
+200 GET /home.html
+302 GET /home
+200 PUT /update
+302 POST /update
