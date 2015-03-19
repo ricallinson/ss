@@ -101,6 +101,9 @@ func Query(q string, o *os.File, c int) func(string) int {
 				if c > 0 {
 					c--
 				}
+				if c == 0 {
+					os.Exit(0)
+				}
 			}
 			return 1
 		}

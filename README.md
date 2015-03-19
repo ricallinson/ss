@@ -22,7 +22,41 @@ Command line tool for performing __simple searches__ over files and directories.
     ss -c ./fixtures 'PUT'
     5
 
-# Why?
+## Query Syntax
+
+Exact positive matching of __'a' AND 'b'__.
+
+    'a b'
+
+Exact negative matching __NOT 'a' AND NOT 'b'__.
+
+    'NOT a b'
+
+Exact positive and negative matching __'a' AND 'b' NOT 'c' AND 'd'__.
+
+    'a b NOT c d'
+
+Exact positive OR matching __'a' OR 'b'__.
+
+    'a OR b'
+
+Exact positive OR group matching __'a' OR 'b' OR 'c'__.
+
+    'a OR b OR c'
+
+Exact negative OR matching __NOT 'a' OR NOT 'b'__.
+
+    'NOT a OR b'
+
+Exact positive and negative OR matching __'a' OR 'b' NOT 'c' OR 'd' OR 'e'__.
+
+    'a OR b NOT c OR d OR e'
+
+Complete example of positive and negative using OR matching __'a' AND 'b' AND 'c' OR 'd' NOT 'e' AND NOT 'f' AND NOT 'g' OR NOT 'h' OR NOT 'j'__.
+
+    'a b c OR e NOT f g OR h OR j'
+
+## Why?
 
 You can use `cat`, `grep` and `wc` to achieve the same result without needing to install yet another program.
 
@@ -36,22 +70,22 @@ But if like me regex is not your first language then simple queries like the fol
 
 Performance can also become issue when using `cat` and `grep` over several gigabytes worth of files.
 
-# Ideas
+## Ideas
 
-## Count items over some time period
+### Count items over some time period
 
 How do you specify the field to represent time?
 
     ss -tp field,1d ./path 'query'
     20, 30, 50, 30, 20
 
-# Test
+## Test
 
 Install the coverage tool `go get code.google.com/p/go.tools/cmd/cover`.
 
     go test
 
-# Code Coverage
+## Code Coverage
 
 Get a quick coverage number.
 
