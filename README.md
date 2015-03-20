@@ -4,6 +4,8 @@
 
 Command line tool for performing __simple searches__ over files and directories.
 
+    ss -c /dir 'foo NOT bar'
+
 ## Install
 
 You must have [go](http://golang.org/) installed to build __ss__.
@@ -14,9 +16,9 @@ You must have [go](http://golang.org/) installed to build __ss__.
 
     ss
     Usage: [options] filename|directory "query"
-      ss -c ./path "a b"
-      ss -c ./path "a b NOT y z"
-      ss -c ./path "a OR b"
+      ss -c /dir "a b"
+      ss -c /dir "a b NOT y z"
+      ss -c /dir "a OR b"
 
     ss -h
     Usage of ss:

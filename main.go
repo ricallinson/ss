@@ -13,6 +13,8 @@ import (
 
 var VERSION string = "0.1.0"
 
+// Todo: Return a map[string]int so the following can be supported;
+//   groupBy = pattern, type = match, year, month, week, day, hour, minute, second
 func ProcessFile(file string, query func(string) int) int {
 	f, err := os.Open(file)
 	if err != nil {
@@ -85,9 +87,9 @@ func main() {
 
 	if len(flag.Arg(1)) == 0 {
 		fmt.Println("Usage: [options] filename|directory \"query\"")
-		fmt.Println("  ss -c ./path \"a b\"")
-		fmt.Println("  ss -c ./path \"a b NOT y z\"")
-		fmt.Println("  ss -c ./path \"a OR b\"")
+		fmt.Println("  ss -c /dir \"a b\"")
+		fmt.Println("  ss -c /dir \"a b NOT y z\"")
+		fmt.Println("  ss -c /dir \"a OR b\"")
 		return
 	}
 
