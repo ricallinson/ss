@@ -27,7 +27,7 @@ You must have [go](http://golang.org/) installed to build __ss__.
       -t=false: output the time taken in seconds
       -version=false: output the version information
 
-    ss -c ./fixtures 'PUT'
+    ss -c /dir 'PUT'
     5
 
 ## Query Syntax
@@ -68,12 +68,12 @@ Complete example of positive and negative using OR matching __'a' AND 'b' AND 'c
 
 You can use `cat`, `grep` and `wc` to achieve the same result without needing to install yet another program.
 
-    cat ./fixtures/**/* | grep PUT | wc -l
+    cat /dir/**/* | grep PUT | wc -l
            5
 
 But if like me regex is not your first language then simple queries like the following become a time sink.
 
-    ss -c ./fixtures 'home NOT 302'
+    ss -c /dir 'home NOT 302'
     5
 
 Performance can also become issue when using `cat`, `grep`, `wc` over several gigabytes worth of files.
@@ -84,7 +84,7 @@ Performance can also become issue when using `cat`, `grep`, `wc` over several gi
 
 How do you specify the field to represent time?
 
-    ss -tp field,1d ./path 'query'
+    ss -tp field,1d /dir 'query'
     20, 30, 50, 30, 20
 
 ## Test
